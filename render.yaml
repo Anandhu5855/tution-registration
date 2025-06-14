@@ -1,11 +1,1 @@
-services:
-  - type: web
-    name: tuition-django
-    env: python
-    buildCommand: "./build.sh"
-    startCommand: "gunicorn tuition_registration.wsgi:application"
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: tuition_registration.settings
-      - key: PYTHON_VERSION
-        value: 3.11.8
+# Trigger redeploy with updated config
