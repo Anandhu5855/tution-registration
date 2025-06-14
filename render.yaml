@@ -1,1 +1,13 @@
-# Trigger redeploy with updated config
+services:
+  - type: web
+    name: tution-registration
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn tuition_django.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: tuition_django.settings
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: SECRET_KEY
+        generateValue: true
